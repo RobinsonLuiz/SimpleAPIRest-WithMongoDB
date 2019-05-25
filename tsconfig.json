@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "build",
+        "types": [
+            "node"
+        ],
+        "lib": [
+            "es2015"
+        ],
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    "include": [
+        "server/**/*.ts",
+        "server/*.ts",
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave" : true,
+    "buildOnSave": true
+}
