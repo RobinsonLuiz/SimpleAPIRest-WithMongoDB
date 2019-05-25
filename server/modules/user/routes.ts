@@ -25,7 +25,7 @@ class UserRoutes {
     }
 
     async getById(req, res) {
-        const { id } = req.params
+        const { id } = req.params;
         if (!id) {
             sendResponse(res, httpStatus.OK, 'Usuário não foi encontrado');
         } else {
@@ -42,23 +42,6 @@ class UserRoutes {
             // .getById(id)
             // .then((user) => sendResponse(res, httpStatus.OK, user))
             // .catch((error) => console.log(`Erro: ${error}`));
-        }
-    }
-
-    async getByEmail(req, res) {
-        const { email } = req.params.email;
-        if (!email) {
-            sendResponse(res, httpStatus.OK, 'Usuário não foi encontrado');
-        } else {
-            try {
-                const response = await UserController.getByEmail(email);
-                if (response)
-                    sendResponse(res, httpStatus.OK, response)
-                else 
-                    sendResponse(res, httpStatus.OK, "Usuário não encontrado");
-            } catch (err) {
-                sendResponse(res, httpStatus.BAD_REQUEST, `Problema ao buscar usuarios : ${err}`);
-            }
         }
     }
 
